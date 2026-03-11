@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # PV Performance Analysis – Dortmund
 
 ## Project Overview
