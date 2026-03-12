@@ -95,4 +95,13 @@ This project analyzes the performance of photovoltaic (PV) systems using real-wo
 ## Goal
 
 Demonstrate practical application of Python for renewable energy system analysis and provide insights into PV system performance. This project highlights independent exploration of data analysis and visualization techniques applied to real-world energy datasets.
->>>>>>> f68a6bae20b570b353d3a656813bf0b7c9c7d2a1
+
+### Day 5 – PV Tilt Angle Sensitivity Analysis
+- Simulated PV energy production for multiple panel tilt angles (10°, 30°, 45°)
+- Applied tilt correction factors to estimate energy differences
+- Calculated average annual PV production for each tilt configuration
+- Created a comparison bar chart to visualize tilt impact on energy output
+- Exported results table and visualization to the results folder
+
+Observation:
+The analysis shows that tilt angles around 30° produce the highest annual PV energy output in Dortmund, which aligns with typical optimal PV installation angles for Germany.
