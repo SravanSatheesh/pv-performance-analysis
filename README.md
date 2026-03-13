@@ -1,107 +1,91 @@
-# PV Performance Analysis – Dortmund
+# PV Performance Analysis – Dortmund, Germany
 
 ## Project Overview
-This project analyzes the solar photovoltaic (PV) potential in Dortmund, Germany using PVGIS hourly solar radiation data (2015–2023). The goal is to calculate PV energy output, visualize trends, and explore advanced features like tilt optimization or economic payback.
+
+This project evaluates the photovoltaic (PV) energy generation potential in Dortmund, Germany using long-term hourly solar irradiation data obtained from PVGIS for the period 2015–2023.
+
+The objective is to perform data-driven PV performance modelling, visualize solar energy production patterns, and assess the technical and economic feasibility of residential PV installations.
+
+---
+
+## Project Objectives
+
+* Analyse long-term solar resource availability
+* Model photovoltaic energy production using irradiance data
+* Study seasonal and daily PV performance trends
+* Evaluate impact of panel tilt angle on annual energy yield
+* Estimate economic payback period for a residential PV system
+
+Tools used: **Python (pandas, numpy, matplotlib), Jupyter Notebook**
+
+---
 
 ## Folder Structure
-- data/       : Raw PVGIS CSV files
-- notebooks/  : Jupyter notebooks for analysis
-- results/    : Plots, charts, and reports
-- README.md   : Project description and progress
 
-## Assumptions
-- PV panel area: 1 m²  
-- Panel efficiency: 18% (typical for standard solar panels)  
-- Energy calculation is hourly, based on Global Irradiance (G(i)) from PVGIS  
-- Units:  
-  - Irradiance → W/m²  
-  - PV energy → Wh  
-- Rounding applied for readability in portfolio dataset
+* `data/` → Raw and processed PVGIS datasets
+* `notebooks/` → Jupyter notebooks containing analysis workflow
+* `results/` → Generated plots, processed tables, and technical report
+* `README.md` → Project description and methodology
 
-## Daily Progress
+---
 
-### Day 1 – Setup & Data Exploration
-- Project folders created (data/, notebooks/, results/)
-- PVGIS data downloaded for Dortmund
-- CSV data loaded and cleaned using pandas
-- Time column converted to datetime
-- Numeric columns converted to float
-- Initial plot of Global Irradiance created
+## Modelling Assumptions
 
+* PV panel area: **1.6 m²**
+* Module efficiency: **18%** (typical crystalline silicon module performance)
+* PV energy calculated hourly using Global Irradiance G(i)
+* Units used:
 
-### Day 2 – Data Cleaning & Hourly PV Energy
-- Cleaned column names and reordered columns  
-- Calculated hourly PV energy (Wh) with panel assumptions  
-- Rounded numeric values for portfolio readability  
-- Exported clean CSV and optional Excel  
--“Hourly PV energy was calculated for each row (hourly timestep). Annual totals were aggregated and plotted as a bar chart.”
+  * Irradiance → W/m²
+  * Energy → Wh and kWh
+* Simplified tilt correction factors used for sensitivity analysis
+* Economic evaluation based on average German residential electricity price
 
+---
 
-### Day 3 – Daily and Monthly PV Energy Analysis
-- Set `time` column as the DataFrame index to enable time-series resampling
-- Aggregated hourly PV energy (`PV_Energy_Wh`) into **daily PV energy production**
-- Converted daily energy values from **Wh to kWh**
-- Generated a **daily PV energy production plot** to observe short-term solar variability
-- Aggregated daily energy values into **monthly PV energy production**
-- Calculated the **average monthly PV energy output (2015–2023)** to analyze seasonal solar patterns
-- Created a **monthly average PV energy bar chart** showing seasonal production trends
-- Exported processed datasets to the `results/` folder (`daily_energy.csv`, `monthly_energy.csv`)
+## Methodology
 
-**Observation:**  
-The results show a clear seasonal PV generation pattern in Dortmund, with **highest energy production during summer months (June–July)** and **lowest production during winter months (December–January)** due to reduced solar irradiation and shorter daylight hours.
+### Data Processing
 
+* PVGIS hourly solar irradiation dataset imported and cleaned
+* Time column converted to datetime format
+* Numeric parameters converted to floating-point values
+* Hourly PV energy output calculated from irradiance
 
-### Day 4 – PV Visualization Analysis
-- Reloaded the cleaned PV dataset and ensured the `time` column was set as the DataFrame index for time-based analysis
-- Extracted the **hour of day** from the timestamp to analyze typical daily PV production behavior
-- Calculated the **average hourly PV energy output** across the entire dataset (2015–2023)
-- Created a **Daily PV Production Curve** showing how solar generation varies during a typical day
-- Calculated **annual PV energy production** by aggregating hourly PV energy values for each year
-- Converted the annual results into a bar chart to compare **year-to-year PV production**
-- Extracted the **month value** from the timestamp to analyze seasonal solar behavior
-- Constructed a **pivot table (month vs hour)** to compute the average PV production for each month-hour combination
-- Created a **Solar Production Heatmap** visualizing how PV energy generation changes throughout the day and across seasons
+### Energy Aggregation
 
-**Observation:**
-- Solar energy production peaks around **midday hours (11:00–14:00)** due to maximum solar irradiance.
-- **Summer months (May–August)** show the highest PV production due to longer daylight duration and higher solar angles.
-- **Winter months (November–January)** show significantly lower PV generation due to shorter daylight hours and lower solar irradiation levels.
+* Hourly PV energy aggregated into:
 
-**Outputs generated (saved in `results/` folder):**
-- `daily_production_curve.png`
-- `annual_energy_plot.png`
-- `solar_heatmap.png`
-=======
-# PV Performance Analysis – Self-Driven Analysis
+  * Daily production
+  * Monthly average production
+  * Annual energy generation
 
-This project analyzes the performance of photovoltaic (PV) systems using real-world generation data. The goal is to explore energy production trends, evaluate system efficiency, and visualize seasonal and operational variations in PV output.
+### Visual Analysis
 
-## Key Features
+The following visualisations were generated:
 
-- Load and process PV generation data using **Python and Pandas**  
-- Visualize daily, monthly, and yearly energy generation trends with **Matplotlib** and **Seaborn**  
-- Perform performance ratio and efficiency calculations  
-- Generate visual reports to understand system behavior and seasonal patterns  
+* Daily PV production curve (typical diurnal pattern)
+* Monthly average PV generation bar chart (seasonal trend)
+* Annual energy comparison plot
+* Solar production heatmap (month vs hour distribution)
+* Tilt angle sensitivity comparison chart
 
-## Tools & Technologies
+---
 
-- Python  
-- Jupyter Notebook  
-- Pandas  
-- NumPy  
-- Matplotlib  
-- Seaborn  
+## Economic Evaluation
 
-## Goal
+A simplified economic analysis was conducted assuming a small residential PV installation.
 
-Demonstrate practical application of Python for renewable energy system analysis and provide insights into PV system performance. This project highlights independent exploration of data analysis and visualization techniques applied to real-world energy datasets.
+* Estimated annual PV electricity production used to calculate potential savings
+* Installation cost assumptions applied
+* Simple payback period estimated based on electricity price
 
-### Day 5 – PV Tilt Angle Sensitivity Analysis
-- Simulated PV energy production for multiple panel tilt angles (10°, 30°, 45°)
-- Applied tilt correction factors to estimate energy differences
-- Calculated average annual PV production for each tilt configuration
-- Created a comparison bar chart to visualize tilt impact on energy output
-- Exported results table and visualization to the results folder
+---
 
-Observation:
-The analysis shows that tilt angles around 30° produce the highest annual PV energy output in Dortmund, which aligns with typical optimal PV installation angles for Germany.
+## Key Findings
+
+* PV generation in Dortmund shows strong **seasonal variability**
+* **Summer months contribute the highest solar energy yield** due to longer daylight duration and higher solar angles
+* **Peak daily generation occurs around midday (11:00–14:00)**
+* Panel tilt angle of approximately **30° provides optimal annual energy output**
+* Residential PV systems demonstrate **reasonable cost recovery potential** under current e
