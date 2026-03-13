@@ -1,0 +1,20 @@
+PV Performance Analysis – Dortmund, Germany
+
+Objective:
+This project evaluates the solar photovoltaic energy generation potential in Dortmund using hourly solar irradiance data from PVGIS for the period 2015–2023.
+
+Methodology:
+The dataset was processed using Python (pandas, matplotlib). Hourly global irradiance values were converted into photovoltaic energy output using assumed panel
+area (1.6 m²) and module efficiency (18%). Energy production was aggregated into daily, monthly, and annual values.
+
+Results:
+The analysis shows clear seasonal variation in PV production, with peak generation during summer months and minimal output during winter. Average annual PV energy 
+production was estimated to be approximately XXXX kWh for the assumed system configuration.
+
+Tilt angle sensitivity analysis indicated that panel inclination around 30° provides optimal energy yield for Dortmund’s geographic location.
+
+Economic evaluation suggests that a small residential PV system can recover installation costs within approximately XX years under current electricity prices.
+
+Conclusion:
+The study demonstrates that solar PV systems are technically viable and economically beneficial for residential installations in Dortmund. The workflow also highlights 
+the usefulness of data-driven analysis for renewable energy system planning.
