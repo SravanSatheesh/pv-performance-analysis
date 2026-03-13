@@ -88,4 +88,20 @@ A simplified economic analysis was conducted assuming a small residential PV ins
 * **Summer months contribute the highest solar energy yield** due to longer daylight duration and higher solar angles
 * **Peak daily generation occurs around midday (11:00–14:00)**
 * Panel tilt angle of approximately **30° provides optimal annual energy output**
-* Residential PV systems demonstrate **reasonable cost recovery potential** under current e
+* Residential PV systems demonstrate **reasonable cost recovery potential** under current electricity pricing
+
+---
+
+## Conclusion
+
+The analysis demonstrates that rooftop photovoltaic systems are technically viable and economically beneficial for residential applications in Dortmund.
+
+The project highlights the importance of solar resource assessment, system orientation, and performance modelling in renewable energy planning.
+
+This workflow illustrates how Python-based data analysis can support informed decision-making in solar energy engineering.
+
+---
+
+## Project Status
+
+Completed as a self-driven renewable energy data analysis portfolio project.
